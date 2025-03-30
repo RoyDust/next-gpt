@@ -73,7 +73,6 @@ const loadSampleData = async () => {
 
       // console.log(`Embedding ${embedding}`);
 
-
       const vector = embedding.data[0].embedding;
 
       const result = await collection.insertOne({
