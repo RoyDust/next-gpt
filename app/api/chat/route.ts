@@ -51,7 +51,7 @@ export async function POST(req: Request) {
     try {
       // 在向量数据库中执行相似性搜索
       const collection = db.collection(ASTRA_DB_COLLECTION!);
-      const cursor = collection.find(null, {
+      const cursor = collection.find({}, {
         sort: {
           $vector: embedding.data[0].embedding, // 使用生成的向量进行相似度排序
         },
@@ -93,7 +93,7 @@ export async function POST(req: Request) {
     });
 
     // 将OpenAI的响应转换为流式响应
-    const stream = OpenAIStream(response);
+    const stream = OpenAIStream(response as any);
 
     // 返回流式响应
     return new StreamingTextResponse(stream);
