@@ -1,5 +1,5 @@
 
-const Bubble = ({ message }) => {
+const Bubble = ({ message }: { message: { content: string; role: string } }) => {
 
     const { content, role } = message;
 

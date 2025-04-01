@@ -1,6 +1,6 @@
 import PromptSuggestionButton from "./PromptSuggestionButton";
 
-const PromptSuggestionRow = ({onPromptClick}) => {
+const PromptSuggestionRow = ({onPromptClick}: {onPromptClick: (prompt: string) => void}) => {
 
     const prompts = [
         "What is the latest news in F1?",
