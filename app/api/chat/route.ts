@@ -19,7 +19,10 @@ const openai = new OpenAI({
 });
 
 // 初始化OpenAI Embedding客户端实例
-const openEmbedding = new openAIEmbeddings();
+const openEmbedding = new openAIEmbeddings({
+  apiKey: OPENAI_API_KEY,
+  baseURL: "https://sg.uiuiapi.com/v1",
+});
 
 // 初始化Astra数据库客户端
 const client = new DataAPIClient(ASTRA_DB_TOKEN);
